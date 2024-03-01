@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ActionStore | Loja Virtual</title>
+        <link rel="stylesheet" href="estilos/global.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="header-inner-content">
+                <h1 class="logo">ACTION<span>STORE</span></h1>
+                <nav>
+                    <ul>
+                        <li>Home</li>
+                        <li>Produtos</li>
+                        <li>Sobre</li>
+                        <li>Contato</li>
+                        <li>Conta</li>
+                    </ul>
+                </nav>
+                <div class="nav-icon-container">
+                    <img src="imagens/carrinho.png" alt="carrinho" class="botao-carrinho">
+                    <img src="imagens/menu.png" alt="menu" class="botao-menu">
+                </div>
+            </div>
+        </div>
+        <header>
+            <div class="header-inner-content">
+                <div class="header-bottom-side">
+                    <div class="header-bottom-side-left">
+                        <h2>A sua loja virtual de Action Figures!</h2>
+                        <p>Marvel, DC Comics, Geek, Games, Animes, Nerd e muito mais. As resinas mais bem elaboradas você encontra aqui!</p>
+                        <button>Ver Agora</button>
+                    </div>
+                    <div class="header-bottom-side-right">
+                        <img src="imagens/heroi.jpg" alt="herói">
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="back-cinza">
+                <div class="page-inner-content">
+                    <div class="cols cols-3">
+                        <img src="imagens/produto1 g.jpg" alt="produto1">
+                        <img src="imagens/produto2 g.jpg" alt="produto2">
+                        <img src="imagens/produto3 g.jpg" alt="produto3">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="page-inner-content">
+                    <h3 class="section title">Produtos Selecionados</h3>
+                    <div class="subtitle-underline"></div>
+                    <div class="cols cols-4">
+                        <div class="produto">
+                            <img src="imagens/produto4.jpg" alt="produto4">
+                            <p class="nome-produto">Psiquiconauta</p>
+                            <p class="rate">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
+                            <p class="preco-produto"><span>R$</span> 80,00</p>
+                        </div>
+                        <div class="produto">
+                            <img src="imagens/produto5.jpg" alt="produto5">
+                            <p class="nome-produto">Heroe of The Sun</p>
+                            <p class="rate">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
+                            <p class="preço-produto"><span>R$</span> 80,00</p>
+                        </div>
+                        <div class="produto">
+                            <img src="imagens/produto6.jpg" alt="produto6">
+                            <p class="nome-produto">Vulcano</p>
+                            <p class="rate">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
+                            <p class="preço-produto"><span>R$</span> 80,00</p>
+                        </div>
+                        <div class="produto">
+                            <img src="imagens/produto7.jpg" alt="produto7">
+                            <p class="nome-produto">Wolfbeast</p>
+                            <p class="rate">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
+                            <p class="preço-produto"><span>R$</span> 80,00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-inner-content">
+                    <h3 class="section title">Ultimos Produtos</h3>
+                    <div class="subtitle-underline"></div>
+                    <div class="cols cols-4">
+                        <div class="produto">
+                            <img src="imagens/produto8.jpg" alt="produto8">
+                            <p class="nome-produto">Joker</p>
+                            <p class="rate">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
+                            <p class="preco-produto"><span>R$</span> 80,00</p>
+                        </div>
+                        <div class="produto">
+                            <img src="imagens/produto9.jpg" alt="produto9">
+                            <p class="nome-produto">Sword Skull</p>
+                            <p class="rate">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
+                            <p class="preço-produto"><span>R$</span> 80,00</p>
+                        </div>
+                        <div class="produto">
+                            <img src="imagens/produto10.jpg" alt="produto10">
+                            <p class="nome-produto">The Dracko</p>
+                            <p class="rate">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
+                            <p class="preço-produto"><span>R$</span> 80,00</p>
+                        </div>
+                        <div class="produto">
+                            <img src="imagens/produto1.jpg" alt="produto1">
+                            <p class="nome-produto">Fireman</p>
+                            <p class="rate">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
+                            <p class="preço-produto"><span>R$</span> 80,00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="back-cinza">
+                <div class="page-inner-content">
+                    <div class="header-inner-content">
+                        <div class="header-bottom-side exclusive-container">
+                            <div class="header-bottom-side-left">
+                                <h2>Action Figures Exclusivos</h2>
+                                <p>Personagens exclusivos e imersivos como você nunca viu!</p>
+                                <button>Ver Agora</button>
+                            </div>
+                            <div class="header-bottom-side-right">
+                                <img src="imagens/exclusive.jpg" alt="herói">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        <script>
+            const navbar = document.querySelector(".navbar");
+            const menuButton = document.querySelector(".botao-menu");
+
+            menuButton.addEventListener("click", () => {
+                navbar.classList.toggle("mostrar-menu");
+            });
+        </script>
+    </body>
+</html>
