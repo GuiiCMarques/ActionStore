@@ -12,16 +12,18 @@
                 <h1 class="logo">ACTION<span>STORE</span></h1>
                 <nav>
                     <ul>
-                        <li>Home</li>
+                        <li><a href="index.html">Home</a></li>
                         <li>Produtos</li>
                         <li>Sobre</li>
-                        <li>Contato</li>
-                        <li>Conta</li>
+                        <li>Cadastro</li>
+                        <li>Login</li>
                     </ul>
                 </nav>
                 <div class="nav-icon-container">
-                    <img src="imagens/carrinho.png" alt="carrinho" class="botao-carrinho">
-                    <img src="imagens/menu.png" alt="menu" class="botao-menu">
+                    <a href="carrinho.html" target="blank">
+                        <img src="imagens/carrinho.png" alt="carrinho" class="botao-carrinho">
+                    </a>
+                        <img src="imagens/menu.png" alt="menu" class="botao-menu">
                 </div>
             </div>
         </div>
@@ -51,7 +53,7 @@
             </div>
             <div>
                 <div class="page-inner-content">
-                    <h3 class="section title">Produtos Selecionados</h3>
+                    <h3 class="section-title">Lançamentos</h3>
                     <div class="subtitle-underline"></div>
                     <div class="cols cols-4">
                         <div class="produto">
@@ -59,54 +61,78 @@
                             <p class="nome-produto">Psiquiconauta</p>
                             <p class="rate">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
                             <p class="preco-produto"><span>R$</span> 80,00</p>
+                            <div class="botoes-produto">
+                                <button class="botao-adicionar-carrinho" onclick="adicionarAoCarrinho('Psiquiconauta', 80.00)">Comprar</button>
+                            </div>
                         </div>
                         <div class="produto">
                             <img src="imagens/produto5.jpg" alt="produto5">
                             <p class="nome-produto">Heroe of The Sun</p>
                             <p class="rate">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
                             <p class="preço-produto"><span>R$</span> 80,00</p>
+                            <div class="botoes-produto">
+                                <button class="botao-adicionar-carrinho" onclick="adicionarAoCarrinho('Heroe of The Sun', 80.00)">Comprar</button>
+                            </div>
                         </div>
                         <div class="produto">
                             <img src="imagens/produto6.jpg" alt="produto6">
                             <p class="nome-produto">Vulcano</p>
                             <p class="rate">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
                             <p class="preço-produto"><span>R$</span> 80,00</p>
+                            <div class="botoes-produto">
+                                <button class="botao-adicionar-carrinho" onclick="adicionarAoCarrinho('Vulcano', 80.00)">Comprar</button>
+                            </div>
                         </div>
                         <div class="produto">
                             <img src="imagens/produto7.jpg" alt="produto7">
                             <p class="nome-produto">Wolfbeast</p>
                             <p class="rate">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
-                            <p class="preço-produto"><span>R$</span> 80,00</p>
+                            <p class="preço-produto"><span>R$</span> 90,00</p>
+                            <div class="botoes-produto">
+                                <button class="botao-adicionar-carrinho" onclick="adicionarAoCarrinho('Wolfbeast', 90.00)">Comprar</button>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="page-inner-content">
-                    <h3 class="section title">Ultimos Produtos</h3>
+                    <h3 class="section-title">Destaques</h3>
                     <div class="subtitle-underline"></div>
                     <div class="cols cols-4">
                         <div class="produto">
                             <img src="imagens/produto8.jpg" alt="produto8">
                             <p class="nome-produto">Joker</p>
                             <p class="rate">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
-                            <p class="preco-produto"><span>R$</span> 80,00</p>
+                            <p class="preco-produto"><span>R$</span> 110,00</p>
+                            <div class="botoes-produto">
+                                <button class="botao-adicionar-carrinho" onclick="adicionarAoCarrinho('Joker', 110.00)">Comprar</button>
+                            </div>
                         </div>
                         <div class="produto">
                             <img src="imagens/produto9.jpg" alt="produto9">
                             <p class="nome-produto">Sword Skull</p>
                             <p class="rate">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
                             <p class="preço-produto"><span>R$</span> 80,00</p>
+                            <div class="botoes-produto">
+                                <button class="botao-adicionar-carrinho" onclick="adicionarAoCarrinho('Sword Skull', 80.00)">Comprar</button>
+                            </div>
                         </div>
                         <div class="produto">
                             <img src="imagens/produto10.jpg" alt="produto10">
                             <p class="nome-produto">The Dracko</p>
                             <p class="rate">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
                             <p class="preço-produto"><span>R$</span> 80,00</p>
+                            <div class="botoes-produto">
+                                <button class="botao-adicionar-carrinho" onclick="adicionarAoCarrinho('The Dracko', 80.00)">Comprar</button>
+                            </div>
                         </div>
                         <div class="produto">
                             <img src="imagens/produto1.jpg" alt="produto1">
                             <p class="nome-produto">Fireman</p>
                             <p class="rate">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
                             <p class="preço-produto"><span>R$</span> 80,00</p>
+                            <div class="botoes-produto">
+                                <button class="botao-adicionar-carrinho" onclick="adicionarAoCarrinho('Fireman', 80.00)">Comprar</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -174,6 +200,20 @@
             menuButton.addEventListener("click", () => {
                 navbar.classList.toggle("mostrar-menu");
             });
+
+            function adicionarAoCarrinho(nome, preco) {
+            // Verifica se há algum item no carrinho, se não houver, cria um array vazio
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+            // Adiciona o produto atual ao carrinho
+            carrinho.push({ nome: nome, preco: preco });
+
+            // Atualiza o carrinho no localStorage
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+            // Redireciona para a página do carrinho
+            window.location.href = 'carrinho.html';
+        }
         </script>
     </body>
 </html>
