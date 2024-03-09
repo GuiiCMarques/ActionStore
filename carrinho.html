@@ -14,7 +14,7 @@
                 <h1 class="logo">ACTION<span>STORE</span></h1>
                 <nav>
                     <ul>
-                      <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li>Produtos</li>
                         <li>Sobre</li>
                         <li>Cadastro</li>
@@ -22,8 +22,10 @@
                     </ul>
                 </nav>
                 <div class="nav-icon-container">
-                    <img src="imagens/carrinho.png" alt="carrinho" class="botao-carrinho">
-                    <img src="imagens/menu.png" alt="menu" class="botao-menu">
+                    <a href="carrinho.html" target="blank">
+                        <img src="imagens/carrinho.png" alt="carrinho" class="botao-carrinho">
+                    </a>
+                        <img src="imagens/menu.png" alt="menu" class="botao-menu">
                 </div>
             </div>
         </div>
@@ -96,8 +98,13 @@
                       </aside>
                   </div>
               </main>
-          
               <script>
+                const navbar = document.querySelector(".navbar");
+                const menuButton = document.querySelector(".botao-menu");
+
+                menuButton.addEventListener("click", () => {
+                navbar.classList.toggle("mostrar-menu");
+                });
                   // Função para atualizar o carrinho
                   function atualizarCarrinho() {
                       // Obtém a referência do tbody da tabela do carrinho
