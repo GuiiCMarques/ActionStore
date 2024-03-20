@@ -18,17 +18,17 @@ body {
     display: flex;
     justify-content: center;
   }
+
   > main {
     background: #fff;
     padding: 0 30px 30px;
 
     .page-title {
-      font-size: 40px;
       padding: 50px 0;
       text-align: center;
     }
     .content {
-      display: flex;
+      display: block;
 
       section {
         flex: 1;
@@ -174,9 +174,6 @@ aside {
         display: flex;
         align-items: center;
         font-size: 16px;
-
-        i {
-        }
       }
     }
     footer {

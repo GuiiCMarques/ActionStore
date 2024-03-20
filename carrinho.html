@@ -5,9 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ActionStore | Loja Virtual - Carrinho</title>
         <link rel="stylesheet" href="estilos/global.css">
-        <link rel="stylesheet" href="estilos/styles.css">
         <link rel="stylesheet" href="estilos/style.scss">
-        <link rel="shortcut icon" href="imagens/ActionStore_-_Logo.png" type="image/x-icon">
     </head>
     <body>
         <div class="navbar">
@@ -42,165 +40,151 @@
                     </div>
                 </div>
             </div>
-        </header>
+        </header>     
         <main>
-          <!DOCTYPE html>
-          <html lang="pt-br">
-          <head>
-              <meta charset="UTF-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title>ActionStore | Loja Virtual - Carrinho</title>
-              <link rel="stylesheet" href="estilos/global.css">
-          </head>
-          <body>
-              <!-- Restante do seu HTML -->
-          
-              <main>
-                  <!-- Seu conteúdo atual do carrinho -->
-          
-                  <div class="page-title">Seu Carrinho</div>
-                  <div class="content">
-                      <section>
-                          <table>
-                              <thead>
-                                  <tr>
-                                      <th>Produto</th>
-                                      <th>Preço</th>
-                                      <th>Quantidade</th>
-                                      <th>Total</th>
-                                      <th>-</th>
-                                  </tr>
-                              </thead>
-                              <tbody id="carrinho-body">
-                                  <!-- Aqui você vai inserir dinamicamente as linhas da tabela com JavaScript -->
-                              </tbody>
-                          </table>
-                      </section>
-                      <aside>
-                          <!-- Seu resumo da compra atual -->
-          
-                          <div class="box">
-                              <header>Resumo da compra</header>
-                              <div class="info">
-                                  <div><span>Sub-total</span><span id="subtotal">R$ 0</span></div>
-                                  <div><span>Frete</span><span>Gratuito</span></div>
-                                  <div>
-                                      <button>
-                                          Adicionar cupom de desconto
-                                          <i class="bx bx-right-arrow-alt"></i>
-                                      </button>
-                                  </div>
-                              </div>
-                              <footer>
-                                  <span>Total</span><span id="total">R$ 0</span>
-                              </footer>
-                          </div>
-                          <button>Finalizar Compra</button>
-                      </aside>
-                  </div>
-              </main>
-              <script>
-                const navbar = document.querySelector(".navbar");
-                const menuButton = document.querySelector(".botao-menu");
-
-                menuButton.addEventListener("click", () => {
-                navbar.classList.toggle("mostrar-menu");
-                });
-                  // Função para atualizar o carrinho
-                  function atualizarCarrinho() {
-                      // Obtém a referência do tbody da tabela do carrinho
-                      let carrinhoBody = document.getElementById('carrinho-body');
-          
-                      // Limpa a tabela
-                      carrinhoBody.innerHTML = '';
-          
-                      // Obtém os itens do carrinho do localStorage
-                      let carrinho = JSON.parse(localStorage.getItem('carrinho'));
-          
-                      // Se houver itens no carrinho
-                      if (carrinho && carrinho.length > 0) {
-                          let subtotal = 0;
-          
-                          // Itera sobre os itens do carrinho
-                          carrinho.forEach(function (produto, index) {
-                              // Cria uma nova linha na tabela para cada produto no carrinho
-                              let newRow = document.createElement('tr');
-                              newRow.innerHTML = `
-                                  <td>
-                                      <div class="product">
-                                          <img src="imagem_do_produto.jpg" alt="Imagem do Produto">
-                                          <div class="info">
-                                              <div class="name">${produto.nome}</div>
-                                              <div class="category">Categoria</div> 
-                                          </div>
-                                      </div>
-                                  </td>
-                                  <td>R$ ${produto.preco.toFixed(2)}</td>
-                                  <td>
-                                      <div class="qty">
-                                          <button><i class="bx bx-minus"></i></button>
-                                          <span>1</span> <!-- Quantidade fixa por enquanto, pode ser alterada se desejar -->
-                                          <button><i class="bx bx-plus"></i></button>
-                                      </div>
-                                  </td>
-                                  <td>R$ ${produto.preco.toFixed(2)}</td>
-                                  <td>
-                                      <button class="remove-item" data-index="${index}">Remover</button>
-                                  </td>
-                              `;
-          
-                              // Adiciona a nova linha à tabela do carrinho
-                              carrinhoBody.appendChild(newRow);
-          
-                              // Adiciona o preço do produto ao subtotal
-                              subtotal += produto.preco;
-                          });
-          
-                          // Atualiza o subtotal e o total na página
-                          document.getElementById('subtotal').textContent = `R$ ${subtotal.toFixed(2)}`;
-                          document.getElementById('total').textContent = `R$ ${subtotal.toFixed(2)}`;
-                      }
-                  }
-          
-                  // Função para remover um item do carrinho
-                  function removerItemDoCarrinho(index) {
-                      let carrinho = JSON.parse(localStorage.getItem('carrinho'));
-          
-                      // Remove o item correspondente ao índice passado
-                      carrinho.splice(index, 1);
-          
-                      // Atualiza o carrinho no localStorage
-                      localStorage.setItem('carrinho', JSON.stringify(carrinho));
-          
-                      // Atualiza a exibição do carrinho na página
-                      atualizarCarrinho();
-                  }
-          
-                  // Adiciona um listener de evento para os botões de remoção
-                  document.addEventListener('click', function (event) {
-                      if (event.target.classList.contains('remove-item')) {
-                          let index = event.target.getAttribute('data-index');
-                          removerItemDoCarrinho(index);
-                      }
-                  });
-          
-                  // Atualiza o carrinho assim que a página carrega
-                  window.addEventListener('DOMContentLoaded', function () {
-                      atualizarCarrinho();
-                  });
-              </script>
-              <footer class="back-cinza">
-                <div class="page-inner-content footer-content">
-                    <div class="logo-footer">
-                        <h1 class="logo">ACTION<span>STORE</span></h1>
-                        <p>A sua loja virtual de Action Figures!</p>
+            <div class="page-title">Seu Carrinho</div>
+            <div class="content">
+                <section>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Preço</th>
+                                <th>Quantidade</th>
+                                <th>Total</th>
+                                <th>-</th>
+                            </tr>
+                        </thead>
+                        <tbody id="carrinho-body">
+                            <!-- Aqui você vai inserir dinamicamente as linhas da tabela com JavaScript -->
+                        </tbody>
+                    </table>
+                </section>
+                <aside>
+                    <!-- Seu resumo da compra atual -->
+    
+                    <div class="box">
+                        <header>Resumo da compra</header>
+                        <div class="info">
+                            <div><span>Sub-total</span><span id="subtotal">R$ 0</span></div>
+                            <div><span>Frete</span><span>Gratuito</span></div>
+                            <div>
+                                <button>
+                                    Adicionar cupom de desconto
+                                    <i class="bx bx-right-arrow-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <footer>
+                            <span>Total</span><span id="total">R$ 0</span>
+                        </footer>
                     </div>
+                    <button>Finalizar Compra</button>
+                </aside>
+            </div>
+        </main>
+        <script>
+            const navbar = document.querySelector(".navbar");
+            const menuButton = document.querySelector(".botao-menu");
+
+            menuButton.addEventListener("click", () => {
+            navbar.classList.toggle("mostrar-menu");
+            });
+            // Função para atualizar o carrinho
+            function atualizarCarrinho() {
+                // Obtém a referência do tbody da tabela do carrinho
+                let carrinhoBody = document.getElementById('carrinho-body');
+    
+                // Limpa a tabela
+                carrinhoBody.innerHTML = '';
+    
+                // Obtém os itens do carrinho do localStorage
+                let carrinho = JSON.parse(localStorage.getItem('carrinho'));
+    
+                // Se houver itens no carrinho
+                if (carrinho && carrinho.length > 0) {
+                    let subtotal = 0;
+    
+                    // Itera sobre os itens do carrinho
+                    carrinho.forEach(function (produto, index) {
+                        // Cria uma nova linha na tabela para cada produto no carrinho
+                        let newRow = document.createElement('tr');
+                        newRow.innerHTML = `
+                            <td>
+                                <div class="product">
+                                    <img src="imagem_do_produto.jpg" alt="Imagem do Produto">
+                                    <div class="info">
+                                        <div class="name">${produto.nome}</div>
+                                        <div class="category">Categoria</div> 
+                                    </div>
+                                </div>
+                            </td>
+                            <td>R$ ${produto.preco.toFixed(2)}</td>
+                            <td>
+                                <div class="qty">
+                                    <button><i class="bx bx-minus"></i></button>
+                                    <span>1</span> <!-- Quantidade fixa por enquanto, pode ser alterada se desejar -->
+                                    <button><i class="bx bx-plus"></i></button>
+                                </div>
+                            </td>
+                            <td>R$ ${produto.preco.toFixed(2)}</td>
+                            <td>
+                                <button class="remove-item" data-index="${index}">Remover</button>
+                            </td>
+                        `;
+    
+                        // Adiciona a nova linha à tabela do carrinho
+                        carrinhoBody.appendChild(newRow);
+    
+                        // Adiciona o preço do produto ao subtotal
+                        subtotal += produto.preco;
+                    });
+    
+                    // Atualiza o subtotal e o total na página
+                    document.getElementById('subtotal').textContent = `R$ ${subtotal.toFixed(2)}`;
+                    document.getElementById('total').textContent = `R$ ${subtotal.toFixed(2)}`;
+                }
+            }
+    
+            // Função para remover um item do carrinho
+            function removerItemDoCarrinho(index) {
+                let carrinho = JSON.parse(localStorage.getItem('carrinho'));
+    
+                // Remove o item correspondente ao índice passado
+                carrinho.splice(index, 1);
+    
+                // Atualiza o carrinho no localStorage
+                localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    
+                // Atualiza a exibição do carrinho na página
+                atualizarCarrinho();
+            }
+    
+            // Adiciona um listener de evento para os botões de remoção
+            document.addEventListener('click', function (event) {
+                if (event.target.classList.contains('remove-item')) {
+                    let index = event.target.getAttribute('data-index');
+                    removerItemDoCarrinho(index);
+                }
+            });
+    
+            // Atualiza o carrinho assim que a página carrega
+            window.addEventListener('DOMContentLoaded', function () {
+                atualizarCarrinho();
+            });
+        </script>
+        <footer class="back-cinza">
+            <div class="page-inner-content footer-content">
+                <div class="logo-footer">
+                    <h1 class="logo">ACTION<span>STORE</span></h1>
+                    <p>A sua loja virtual de Action Figures!</p>
                 </div>
-                <hr class="page-inner-content" />
-                <div class="page-inner-content copyright">
-                    <p>Copyright 2024 - ActionStore&#169; - Todos os Direitos Reservados</p>
-                </div>
-            </footer>
-          </body>
-          </html>
+            </div>
+            <hr class="page-inner-content" />
+            <div class="page-inner-content copyright">
+                <p>Copyright 2024 - ActionStore&#169; - Todos os Direitos Reservados</p>
+            </div>
+        </footer>
+    </body>
+</html>
           
