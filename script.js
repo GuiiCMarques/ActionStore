@@ -11,6 +11,23 @@ document.addEventListener("DOMContentLoaded", function() {
         carrinho.push({ nome: nome, preco: preco });
         localStorage.setItem('carrinho', JSON.stringify(carrinho));
         alert('Item adicionado ao carrinho!');
+        const data = { nome: nome, preco: preco };
+        fetch('http://localhost:3000/comprar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            alert('Item adicionado ao carrinho!');
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+            alert('Erro ao adicionar item ao carrinho');
+        });
     }
 
     function atualizarCarrinho() {
@@ -57,6 +74,24 @@ document.addEventListener("DOMContentLoaded", function() {
         carrinho.splice(index, 1);
         localStorage.setItem('carrinho', JSON.stringify(carrinho));
         atualizarCarrinho();
+        const data = { id: id };
+        fetch('http://localhost:3000/remover', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            alert('Item removido do carrinho!');
+            atualizarCarrinho(); // Atualiza o carrinho após a remoção
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+            alert('Erro ao remover item do carrinho');
+        });
     }
 
     document.addEventListener('click', function (event) {

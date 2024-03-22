@@ -40,3 +40,29 @@ app.get('/produtos', (req, res) => {
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
 });
+
+// Requisições de compra e remoção de itens do carrinho.
+app.post('/comprar', (req, res) => {
+    const { nome, preco } = req.body;
+    const query = 'INSERT INTO produtos (nome, preco) VALUES (?, ?)';
+    db.query(query, [nome, preco], (err, result) => {
+        if (err) {
+            res.status(500).send('Erro ao adicionar produto ao carrinho');
+        } else {
+            res.status(200).send('Produto adicionado ao carrinho com sucesso');
+        }
+    });
+});
+
+app.post('/remover', (req, res) => {
+    const { id } = req.body;
+    const query = 'DELETE FROM produtos WHERE id = ?';
+    db.query(query, [id], (err, result) => {
+        if (err) {
+            res.status(500).send('Erro ao remover produto do carrinho');
+        } else {
+            res.status(200).send('Produto removido do carrinho com sucesso');
+        }
+    });
+});
+
