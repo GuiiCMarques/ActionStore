@@ -1,8 +1,12 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const mysql = require('mysql');
 
 const app = express();
 const port = 3000;
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 const db = mysql.createConnection({
     host: 'localhost',
@@ -66,3 +70,22 @@ app.post('/remover', (req, res) => {
     });
 });
 
+// Endpoint para lidar com o cadastro de clientes
+app.post('/api/cadastro', (req, res) => {
+    const cliente = req.body;
+
+    // Inserir a lógica para coletar os dados do cliente e colocar no banco de dados
+    // Exemplo de consulta SQL para inserção de dados:
+    // connection.query('INSERT INTO clientes (nome, cpf, email, telefone, cep, rua, numero, bairro, cidade, estado, pais, senha) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [cliente.nome, cliente.cpf, cliente.email, cliente.telefone, cliente.cep, cliente.rua, cliente.numero, cliente.bairro, cliente.cidade, cliente.estado, cliente.pais, cliente.senha], (err, results) => {
+    //     if (err) {
+    //         console.error('Erro ao cadastrar cliente:', err);
+    //         res.status(500).json({ message: 'Erro ao cadastrar cliente' });
+    //         return;
+    //     }
+    //     console.log('Cliente cadastrado com sucesso');
+    //     res.status(200).json({ message: 'Cliente cadastrado com sucesso' });
+    // });
+
+    console.log('Dados do cliente recebidos:', cliente);
+    res.status(200).json({ message: 'Dados do cliente recebidos' });
+});
