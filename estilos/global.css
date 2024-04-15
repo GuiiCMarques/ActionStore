@@ -149,14 +149,15 @@ header{
 section {
     padding-top: 10vh;
     padding-bottom: 10vh;
+}
+
+section p.frase {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
     line-height: 2em;
     padding-left: 30px;
     font-family: var(--fonte3);
     font-size: 3.5vw;
-}
-
-section p {
-    padding-bottom: 2em;
 }
 
 section.imagem {
@@ -184,6 +185,8 @@ section#img02 {
     background-position: center center;
     background-size: cover;
 }
+
+
 
 /* MEDIA QUERIES */
 
@@ -708,3 +711,30 @@ aside > button {
 aside > button:hover {
   background: #3bc55b;
 }
+
+/* Página contato.html */
+
+body > main .contato {
+    display: block;
+    text-align: center;
+    padding: 15px;
+    margin: 15px;
+    font-family: var(--fonte3);
+}
+
+img#icard {
+    width: 80%;
+}
+
+div > a > p#card {
+    font-size: 18px;
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 12px;
+    color: rgba(0, 0, 0, 0.808);
+}
+
+p#center {
+    text-align: center;
+}
+
