@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActionStore | Login</title>
+    <link rel="stylesheet" href="estilos/global.css">
+    <link rel="shortcut icon" href="imagens/ActionStore_-_Logo.png" type="image/x-icon">
+    <style>
+        /* Estilo específico para o formulário de login */
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="header-inner-content">
+            <h1 class="logo">ACTION<span>STORE</span></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icon-container">
+                <span id="welcome-message"></span>
+                <a href="carrinho.html">
+                    <img src="imagens/carrinho.png" alt="carrinho" class="botao-carrinho">
+                </a>
+                <img src="imagens/menu.png" alt="menu" class="botao-menu">
+            </div>
+        </div>
+    </div>
+    <form id="loginForm" onsubmit="return enviarFormulario()">
+        <h2>Login</h2>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+        <input type="submit" value="Entrar">
+        <div class="error-message" id="error-message"></div>
+    </form>
+    <footer class="back-cinza">
+        <div class="page-inner-content footer-content">
+            <div class="logo-footer">
+                <img src="imagens/ActionStore_-_Logo.png" alt="logo" width="5%" height="auto">
+                <h1 class="logo">ACTION<span>STORE</span></h1>
+                <p>A sua loja virtual de Action Figures!</p>
+            </div>
+        </div>
+        <hr class="page-inner-content" />
+        <div class="page-inner-content copyright">
+            <p>Copyright 2024 - ActionStore&#169; - Todos os Direitos Reservados</p>
+        </div>
+    </footer>
+    <script>
+        function enviarFormulario() {
+            var formData = new FormData(document.getElementById("loginForm"));
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:3000/api/login");
+            xhr.onload = function() {
+                var response = JSON.parse(xhr.responseText);
+                if (xhr.status === 200) {
+                    document.getElementById("welcome-message").innerText = `Bem-vindo(a) ${response.nome}!`;
+                    document.getElementById("error-message").innerText = '';
+                } else {
+                    document.getElementById("error-message").innerText = response.message;
+                }
+            };
+            xhr.send(formData);
+            return false; // Evita que o formulário seja submetido normalmente
+        }
+    </script>
+</body>
+</html>
