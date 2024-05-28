@@ -232,6 +232,13 @@
             // Redireciona para a página do carrinho
             alert('Item adicionado ao carrinho!');
         }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var nomeUsuario = localStorage.getItem('nomeUsuario');
+            if (nomeUsuario) {
+                document.getElementById("welcome-message").innerText = `Bem-vindo(a) ${nomeUsuario}!`;
+            }
+        });
         </script>
     </body>
 </html>
