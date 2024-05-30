@@ -72,16 +72,16 @@ app.post('/remover', (req, res) => {
 
 // Endpoint para lidar com o cadastro de clientes
 app.post('/api/cadastro', (req, res) => {
-    const cliente = req.body;
+    const usuario = req.body;
 
-    db.query('INSERT INTO clientes SET ?', cliente, (err, results) => {
+    db.query('INSERT INTO usuarios SET ?', usuario, (err, results) => {
         if (err) {
-            console.error('Erro ao cadastrar cliente:', err);
-            res.status(500).json({ message: 'Erro ao cadastrar cliente' });
+            console.error('Erro ao cadastrar usuario:', err);
+            res.status(500).json({ message: 'Erro ao cadastrar usuario' });
             return;
         }
-        console.log('Cliente cadastrado com sucesso');
-        res.status(200).json({ message: 'Cliente cadastrado com sucesso' });
+        console.log('Usuário cadastrado com sucesso');
+        res.status(200).json({ message: 'Usuário cadastrado com sucesso' });
     });
 });
 
@@ -89,7 +89,7 @@ app.post('/api/cadastro', (req, res) => {
 app.post('/api/login', (req, res) => {
     const { email, senha } = req.body;
 
-    db.query('SELECT nome FROM clientes WHERE email = ? AND senha = ?', [email, senha], (err, results) => {
+    db.query('SELECT nome FROM usuarios WHERE email = ? AND senha = ?', [email, senha], (err, results) => {
         if (err) {
             console.error('Erro ao validar login:', err);
             res.status(500).json({ message: 'Erro ao validar login' });
