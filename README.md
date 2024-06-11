@@ -11,8 +11,6 @@ O Website deverá conter um menu de navegação retrátil e compactado "hamburgu
 
 O Website deve cadastrar novos clientes e armazenar seus dados em um banco de dados.
 
-O Website deve ter um sistema de pagamentos e entrega.
-
 O Website deve conter um recurso de modo noturno.
 
 A página contato.html deve ter interatividade com recursos de comunicação.
